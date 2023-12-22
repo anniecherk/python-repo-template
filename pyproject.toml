@@ -1,0 +1,26 @@
+[tool.docformatter]
+recursive = True
+wrap-summaries = 88
+wrap-descriptions = 88
+blank = True
+
+[tool.isort]
+profile = black
+
+[tool.black]
+target-version = ['py38']
+
+[tool.mypy]
+ignore_missing_imports = True
+disallow_untyped_defs = True
+no_implicit_optional = True
+check_untyped_defs = True
+warn_unused_ignores = True
+warn_ignore_any = True
+show_error_codes = True
+
+# if you have modules that have spotty type annotations, you can ignore interactions
+# with them by adding them here
+[[tool.mypy.overrides]]
+module = ["pandas"]
+check_untyped_defs = False
