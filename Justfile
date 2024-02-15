@@ -14,6 +14,17 @@ install-dev-deps:
 install-1pwd-cli:
     brew install --cask 1password/tap/1password-cli
 
+# pipenv will add the dep to the Pipfile and install it
+add-new-dep DEPENDENCY:
+    pipenv install {{DEPENDENCY}}
+
+# installs all the deps w the versions pinned in Pipfile.lock
+install-runtime-deps:
+    pipenv install --ignore-pipfile
+
+# If you change any dependencies in the Pipfile, you'll need to run this to regenerate the Pipfile.lock
+update-pipfile-lock:
+    pipenv lock
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Run
@@ -47,10 +58,6 @@ test-coverage-open:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Housekeeping
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-# If you change any dependencies in the Pipfile, you'll need to run this to regenerate the Pipfile.lock
-update-pipfile-lock:
-    pipenv lock
 
 typecheck:
     pipenv run mypy --config-file pyproject.toml src/*
