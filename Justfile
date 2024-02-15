@@ -6,7 +6,7 @@
 # pipenv manages all the dependency libraries
 install-dev-deps:
     brew install pyenv
-    pyenv install 3.11.5 # or w/ever latest stable is 
+    pyenv install 3.12 # or w/ever latest stable is 
     pip3 install pipenv
 
 # for projects that require any secrets locally

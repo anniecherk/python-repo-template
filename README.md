@@ -1,9 +1,6 @@
 
-This is a cookie-cutter python project template, set up the way I like my projects organized 👾✨
+This is a python project base template, set up the way I like my projects organized 👾✨
 
-### Meta: using cookie-cutter to stamp this repo into a new repo
-
-tbd
 
 ### Installation
 
@@ -30,10 +27,22 @@ Dependencies are encoded in the Pipfile & sorted into dev dependencies (needed t
 Install w/:
 
 ```
-tbd
+just install-runtime-deps
 ```
 
 To add a new dependency run:
 ```
-tbd
+just add-new-dep <my-dependency-here>
 ```
+
+# Run
+
+`just run`
+
+# Test
+
+`just test`
+
+# Typecheck, lint & format
+
+`just tidy`
